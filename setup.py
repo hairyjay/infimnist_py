@@ -11,5 +11,9 @@ setup(
          'infimnist.c',
          'py_infimnist.c'],
         include_dirs=[numpy.get_include()]
-        )])
+        )]),
+   scripts=[
+        'infimnist_dataset.py',
+        'infimnist_queue.py',
+       ]
 )
