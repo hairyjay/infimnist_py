@@ -22,9 +22,10 @@ class InfiMNIST(data.Dataset):
 
         target = torch.tensor(labels[0], dtype=torch.int64)
         if self.target_transform is not None:
-            target = self.target_transform(target)
+            t = self.target_transform(target)
 
-        return img, target
+        del digits, labels, target
+        return img, t
 
     def __len__(self):
         return 60000 * self.num_transformations if self.train else 10000
